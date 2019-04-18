@@ -13,7 +13,7 @@ const attacksPersonnageDefaultValues = {
 
     "special" : {
         'delay': 3,                 // Tours d'attente
-        'mana': 20,                 // Consommation de mana
+        'mana': 40,                 // Consommation de mana
         'attackValue': 0.7,         // % de attackMax
         'criticalChance': 0.10,     // % de chances de critique
         'criticalValue': 1.0,       // % de attackMax
@@ -24,16 +24,16 @@ const attacksBossDefaultValues = {
     "base" : {
         'delay':            0,
         'mana':             0,
-        'attackValue':      0.1, // % de attackMax
-        'criticalChance':   0.20, // % de chances de critique
+        'attackValue':      0.10, // % de attackMax
+        'criticalChance':   0.15, // % de chances de critique
         'criticalValue':    0.5, // % de attackMax
     },
 
     "special" : {
         'delay':            3, // Tours d'attente
         'mana':             20, // Consommation de
-        'attackValue':      0.4, // % de attackMax
-        'criticalChance':   0.20, // % de chances de critique
+        'attackValue':      0.20, // % de attackMax
+        'criticalChance':   0.15, // % de chances de critique
         'criticalValue':    0.8, // % de attackMax
     },
 };
@@ -49,7 +49,7 @@ const defenses = {
 
     "heal": {
         'delay': 5,                 // Tours d'attente
-        'mana': 20,                 // Consommation de mana
+        'mana': 40,                 // Consommation de mana
         'healValue': 0.2,           // % des PV manquants
         'criticalChance': 0.10,     // % de chances de critique
         'criticalValue': 0.4,       // % de de PV manquants
@@ -63,8 +63,8 @@ const personnageDefaultValues = {
     "healthMax":            100,
     "healthRegenerate":     1, // (float) % de healthMax/tour
 
-    "mana":                 100,
-    "manaMax":              100,
+    "mana":                 120,
+    "manaMax":              120,
     "manaRegenerate":       1, // (float) % de manaMax/tour
 
     "attackMax":            100, // (int)    Attaque max

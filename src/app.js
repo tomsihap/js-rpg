@@ -7,21 +7,24 @@
 
 var log = function(message, level = 'primary') {
 
-    $('#combatLogs').removeClass('alert-primary')
-                    .removeClass('alert-secondary')
-                    .removeClass('alert-success')
-                    .removeClass('alert-danger')
-                    .removeClass('alert-warning')
-                    .removeClass('alert-info')
-                    .removeClass('alert-light')
-                    .removeClass('alert-dark')
-                    .addClass('alert-' + level)
-                    .text(message)
+    $('#combatLogs').prepend('<div></div>');
+
+    let log = $('#combatLogs').find('div:first-child').first();
+
+    log.addClass('alert')
+        .addClass('alert-' + level)
+        .text(message)
 
 }
 
-let hero = new Personnage("Hermione l'elfe", false);
-let boss = new Personnage("Dracula le super Sayen", true);
+let generator = new NameGenerator;
+
+let hero = new Personnage(generator.getRandomName(), false);
+let boss = new Personnage(generator.getRandomName(), true);
+
+$('#heroImage').attr('src', 'https://robohash.org/' + hero.name + '?set=set4');
+$('#bossImage').attr('src', 'https://robohash.org/' + boss.name + '?set=set2');
+
 let combat = new Combat(hero, boss);
 
 // console.log(combat);
@@ -38,6 +41,29 @@ var refreshData = function () {
             $('#' + k + 'BossValue').text(boss[k]);
         }
     });
+
+    /**
+     * Health and Mana bars
+     */
+
+    $('#healthBarHero').css('width', (hero.health/hero.healthMax)*100 + "%")
+                    .attr('aria-value-now', hero.health)
+                    .text(hero.health + '/' + hero.healthMax)
+
+    $('#healthBarBoss').css('width', (boss.health/boss.healthMax)*100 + "%")
+                    .attr('aria-value-now', boss.health)
+                    .text(boss.health + '/' + boss.healthMax)
+
+    $('#manaBarHero').css('width', (hero.mana/hero.manaMax)*100 + "%")
+                    .attr('aria-value-now', hero.mana)
+                    .text(hero.mana + '/' + hero.manaMax)
+
+    $('#manaBarBoss').css('width', (boss.mana/boss.manaMax)*100 + "%")
+                    .attr('aria-value-now', boss.mana)
+                    .text(boss.mana + '/' + boss.manaMax)
+
+    $('#heroLastAction').attr('src', 'assets/img/'+hero.lastAction + '.png')
+    $('#bossLastAction').attr('src', 'assets/img/'+boss.lastAction + '.png')
 }
 
 refreshData();
@@ -53,27 +79,12 @@ $(function() {
     });
 
     $('#heroDodge').on('click', function() {
-        combat.baseAttack(hero, boss);
+        combat.dodgeDefense(hero, boss);
     });
 
     $('#heroHeal').on('click', function() {
-        combat.baseAttack(hero, boss);
+        combat.healDefense(hero, boss);
     });
 
-    $('#bossAttackBase').on('click', function() {
-        combat.baseAttack(boss, hero);
-    });
-
-    $('#bossAttackSpecial').on('click', function() {
-        combat.specialAttack(boss, hero);
-    });
-
-    $('#bossDodge').on('click', function() {
-
-    });
-
-    $('#bossHeal').on('click', function() {
-
-    });
 
 })

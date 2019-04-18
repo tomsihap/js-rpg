@@ -3,6 +3,10 @@ class Personnage {
     isBoss;
     name;
     level;
+    xp;
+
+    tour;
+    lastAction;
 
     health;
     healthMax;
@@ -37,7 +41,27 @@ class Personnage {
 
     }
 
+    /**
+     * Returns Heal value
+     */
+    getDefenseHealValue = function() {
 
+        // Chances de critique (entre 0.00 et 0.99)
+        let critical = Math.random();
+
+        // On teste si on a passé le seuil de critique
+        let isCritical = (critical <= this.defenses.heal.criticalChance) ? true : false;
+
+        // On récupère l'attackValue selon si on a fait un coup critique
+        let healValue = (isCritical) ? this.defenses.heal.criticalValue : this.defenses.heal.healValue;
+
+        let healthLeft = this.healthMax - this.health;
+
+        let heal = healValue * healthLeft;
+
+        return heal;
+
+    }
     /**
      * Returns Base Attack value
      */
@@ -46,10 +70,10 @@ class Personnage {
         let critical = Math.random();
 
         // On teste si on a passé le seuil de critique
-        let isCritical = (critical <= attacksPersonnageDefaultValues.base.criticalChance) ? true : false;
+        let isCritical = (critical <= this.attacks.base.criticalChance) ? true : false;
 
         // On récupère l'attackValue selon si on a fait un coup critique
-        let attackValue = (isCritical) ? attacksPersonnageDefaultValues.base.criticalValue : attacksPersonnageDefaultValues.base.attackValue;
+        let attackValue = (isCritical) ? this.attacks.base.criticalValue : this.attacks.base.attackValue;
 
         // On calcule la puissance par rapport à l'attaque max
         let puissance = this.attackMax * attackValue;
@@ -62,12 +86,11 @@ class Personnage {
      */
     getAttackSpecialValue = function() {
         let critical    = Math.random();
-        let isCritical  = (critical <= attacksPersonnageDefaultValues.special.criticalChance) ? true : false;
-        let attackValue = (isCritical) ? attacksPersonnageDefaultValues.special.criticalValue : attacksPersonnageDefaultValues.special.attackValue;
+        let isCritical  = (critical <= this.attacks.special.criticalChance) ? true : false;
+        let attackValue = (isCritical) ? this.attacks.special.criticalValue : this.attacks.special.attackValue;
         let puissance   = this.attackMax * attackValue;
 
         return puissance;
-
     }
 
 

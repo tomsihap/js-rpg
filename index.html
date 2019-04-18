@@ -13,35 +13,38 @@
 
     <div class="container mt-3">
 
-        <div id="combatLogs" class="alert alert-primary" role="alert"></div>
-
         <div class="row">
-            <section id="infosPerso" class="col-4">
+            <section id="infosPerso" class="col-5">
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 id="nameHeroValue">Han Solo le conquérant</h3>
+                        <div class="row">
+                            <div class="col-4">
+                                <img id="heroImage" width="100" alt="">
+                            </div>
+                            <div class="col-8">
+                                <h3 id="nameHeroValue">Han Solo le conquérant</h3>
+                                <h5>Niveau <span id="levelHeroValue"></span></h5>
+                                <div class="float-right">
+                                    <img id="heroLastAction" height="50" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="progress mt-1">
+                            <div id="healthBarHero" class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <div class="progress mt-1">
+                            <div id="manaBarHero"class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
 
                     </div>
                     <div class="card-body">
                         <ul>
                             <li>
-                                level : <span id="levelHeroValue"></span>
-                            </li>
-                            <li>
-                                health : <span id="healthHeroValue"></span>
-                            </li>
-                            <li>
-                                healthMax : <span id="healthMaxHeroValue"></span>
-                            </li>
-                            <li>
                                 healthRegenerate : <span id="healthRegenerateHeroValue"></span>
-                            </li>
-                            <li>
-                                mana : <span id="manaHeroValue"></span>
-                            </li>
-                            <li>
-                                manaMax : <span id="manaMaxHeroValue"></span>
                             </li>
                             <li>
                                 manaRegenerate : <span id="manaRegenerateHeroValue"></span>
@@ -54,43 +57,44 @@
                             </li>
                         </ul>
                     </div>
-
-                    <div class="card-footer">
-                        <button id="heroAttackBase" class="btn btn-primary mt-1">Attaque base</button><br>
-                        <button id="heroAttackSpecial" class="btn btn-primary mt-1">Attaque spéciale</button><br>
-                        <button id="heroDodge" class="btn btn-primary mt-1">Esquive</button><br>
-                        <button id="heroHeal" class="btn btn-primary mt-1">Soin</button>
-                    </div>
                 </div>
 
             </section>
 
-            <section id="infosBoss" class="col-8">
+            <section id="infosBoss" class="col-7">
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 id="nameBossValue"></h3>
+                        <div class="row">
+                            <div class="col-2">
+                                <img id="bossImage" width="100" alt="">
+                            </div>
+                            <div class="col-10">
+                                <h3 id="nameBossValue"></h3>
+                                <h5>Niveau <span id="levelBossValue"></span></h5>
+
+                                <div class="float-right">
+                                    <img id="bossLastAction" height="50" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="progress mt-1">
+                            <div id="healthBarBoss" class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+
+                        <div class="progress mt-1">
+                            <div id="manaBarBoss" class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
 
                     </div>
                     <div class="card-body">
                         <ul>
                             <li>
-                                level : <span id="levelBossValue"></span>
-                            </li>
-                            <li>
-                                health : <span id="healthBossValue"></span>
-                            </li>
-                            <li>
-                                healthMax : <span id="healthMaxBossValue"></span>
-                            </li>
-                            <li>
                                 healthRegenerate : <span id="healthRegenerateBossValue"></span>
-                            </li>
-                            <li>
-                                mana : <span id="manaBossValue"></span>
-                            </li>
-                            <li>
-                                manaMax : <span id="manaMaxBossValue"></span>
                             </li>
                             <li>
                                 manaRegenerate : <span id="manaRegenerateBossValue"></span>
@@ -102,15 +106,20 @@
                                 heal : <span id="healBossValue"></span>
                             </li>
                         </ul>
-                    </div>
-                    <div class="card-footer">
-                        <button id="bossAttackBase" class="btn btn-primary mt-1">Attaque base</button>
-                        <button id="bossAttackSpecial" class="btn btn-primary mt-1">Attaque spéciale</button>
-                        <button id="bossDodge" class="btn btn-primary mt-1">Esquive</button>
-                        <button id="bossHeal" class="btn btn-primary mt-1">Soin</button>
+                        </div>
+
                     </div>
                 </div>
             </section>
+            <section class="col-12 text-center">
+                <button id="heroAttackBase" class="btn btn-primary mt-1">Attaque base</button>
+                <button id="heroAttackSpecial" class="btn btn-primary mt-1">Attaque spéciale</button>
+                <button id="heroDodge" class="btn btn-primary mt-1">Esquive</button>
+                <button id="heroHeal" class="btn btn-primary mt-1">Soin</button>
+            </section>
+
+        <div id="combatLogs" class="mt-2"></div>
+
         </div>
     </div>
 
@@ -119,6 +128,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="src/NameGenerator.js"></script>
     <script src="src/config.js"></script>
     <script src="src/Personnage.js"></script>
     <script src="src/Combat.js"></script>
