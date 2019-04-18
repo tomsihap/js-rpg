@@ -11,6 +11,109 @@
   </head>
   <body>
 
+    <div class="container mt-3">
+
+        <div id="combatLogs" class="alert alert-primary" role="alert"></div>
+
+        <div class="row">
+            <section id="infosPerso" class="col-4">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 id="nameHeroValue">Han Solo le conquérant</h3>
+
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                level : <span id="levelHeroValue"></span>
+                            </li>
+                            <li>
+                                health : <span id="healthHeroValue"></span>
+                            </li>
+                            <li>
+                                healthMax : <span id="healthMaxHeroValue"></span>
+                            </li>
+                            <li>
+                                healthRegenerate : <span id="healthRegenerateHeroValue"></span>
+                            </li>
+                            <li>
+                                mana : <span id="manaHeroValue"></span>
+                            </li>
+                            <li>
+                                manaMax : <span id="manaMaxHeroValue"></span>
+                            </li>
+                            <li>
+                                manaRegenerate : <span id="manaRegenerateHeroValue"></span>
+                            </li>
+                            <li>
+                                attackMax : <span id="attackMaxHeroValue"></span>
+                            </li>
+                            <li>
+                                heal : <span id="healHeroValue"></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-footer">
+                        <button id="heroAttackBase" class="btn btn-primary mt-1">Attaque base</button><br>
+                        <button id="heroAttackSpecial" class="btn btn-primary mt-1">Attaque spéciale</button><br>
+                        <button id="heroDodge" class="btn btn-primary mt-1">Esquive</button><br>
+                        <button id="heroHeal" class="btn btn-primary mt-1">Soin</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="infosBoss" class="col-8">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 id="nameBossValue"></h3>
+
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                level : <span id="levelBossValue"></span>
+                            </li>
+                            <li>
+                                health : <span id="healthBossValue"></span>
+                            </li>
+                            <li>
+                                healthMax : <span id="healthMaxBossValue"></span>
+                            </li>
+                            <li>
+                                healthRegenerate : <span id="healthRegenerateBossValue"></span>
+                            </li>
+                            <li>
+                                mana : <span id="manaBossValue"></span>
+                            </li>
+                            <li>
+                                manaMax : <span id="manaMaxBossValue"></span>
+                            </li>
+                            <li>
+                                manaRegenerate : <span id="manaRegenerateBossValue"></span>
+                            </li>
+                            <li>
+                                attackMax : <span id="attackMaxBossValue"></span>
+                            </li>
+                            <li>
+                                heal : <span id="healBossValue"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button id="bossAttackBase" class="btn btn-primary mt-1">Attaque base</button>
+                        <button id="bossAttackSpecial" class="btn btn-primary mt-1">Attaque spéciale</button>
+                        <button id="bossDodge" class="btn btn-primary mt-1">Esquive</button>
+                        <button id="bossHeal" class="btn btn-primary mt-1">Soin</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

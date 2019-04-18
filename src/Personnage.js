@@ -1,6 +1,7 @@
 class Personnage {
 
     isBoss;
+    name;
     level;
 
     health;
@@ -14,9 +15,12 @@ class Personnage {
     attackMax;      // (int)    Attaque max
     heal;           // (float)  % de vie manquante
 
+    attacks;
+    defenses;
 
-    constructor(isBoss) {
+    constructor(name, isBoss) {
 
+        this.name       = name;
         this.isBoss     = isBoss;
         this.level      = 1;
         this.health     = isBoss ? bossDefaultValues.health : personnageDefaultValues.health;
@@ -28,7 +32,11 @@ class Personnage {
         this.attackMax  = isBoss ? bossDefaultValues.attackMax : personnageDefaultValues.attackMax;
         this.heal       = isBoss ? bossDefaultValues.heal : personnageDefaultValues.heal;
 
+        this.attacks = isBoss ? attacksBossDefaultValues : attacksPersonnageDefaultValues;
+        this.defenses = defenses;
+
     }
+
 
     /**
      * Returns Base Attack value

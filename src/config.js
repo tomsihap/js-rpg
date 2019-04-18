@@ -12,8 +12,8 @@ const attacksPersonnageDefaultValues = {
     },
 
     "special" : {
-        'delay': 3,               // Tours d'attente
-        'mana': 0.2,                // % de mana total
+        'delay': 3,                 // Tours d'attente
+        'mana': 20,                 // Consommation de mana
         'attackValue': 0.7,         // % de attackMax
         'criticalChance': 0.10,     // % de chances de critique
         'criticalValue': 1.0,       // % de attackMax
@@ -31,7 +31,7 @@ const attacksBossDefaultValues = {
 
     "special" : {
         'delay':            3, // Tours d'attente
-        'mana':             0.2, // % de mana total
+        'mana':             20, // Consommation de
         'attackValue':      0.4, // % de attackMax
         'criticalChance':   0.20, // % de chances de critique
         'criticalValue':    0.8, // % de attackMax
@@ -49,7 +49,7 @@ const defenses = {
 
     "heal": {
         'delay': 5,                 // Tours d'attente
-        'mana': 0.2,                // % de mana total
+        'mana': 20,                 // Consommation de mana
         'healValue': 0.2,           // % des PV manquants
         'criticalChance': 0.10,     // % de chances de critique
         'criticalValue': 0.4,       // % de de PV manquants
@@ -68,6 +68,8 @@ const personnageDefaultValues = {
     "manaRegenerate":       1, // (float) % de manaMax/tour
 
     "attackMax":            100, // (int)    Attaque max
+    "heal":                 0, // (float)  % de vie manquante
+
 }
 
 const bossDefaultValues = {
