@@ -15,6 +15,7 @@ var log = function(message, level = 'primary') {
         .addClass('alert-' + level)
         .text(message)
 
+        console.log('ok')
 }
 
 let generator = new NameGenerator;
